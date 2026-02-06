@@ -31,37 +31,38 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
 
 const WhyChooseUs: React.FC = () => {
   const features = [
-    {
-      icon: <FaTooth />,
-      title: 'Blood clotting disorder',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    },
-    {
-      icon: <FaUserMd />,
-      title: 'Wound healing genes',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    },
-    {
-      icon: <FaFileAlt />,
-      title: 'Studies of genetic',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    },
-    {
-      icon: <FaDna />,
-      title: 'Generics strategies',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    },
-    {
-      icon: <FaSeedling />,
-      title: 'Springtime allergies',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    },
-    {
-      icon: <Ear size={28} />,
-      title: 'Muscle fitness',
-      description: 'Donec ipsum diam, pretium mollis dapibus risus. Nullam dolor nibh pulvinar at interdum eget.'
-    }
-  ];
+  {
+    icon: <FaTooth />,
+    title: 'Blood Clotting Disorders | Cudurrada Xinjirowga Dhiigga',
+    description: 'Assessment and management of bleeding and clotting conditions such as hemophilia and thrombosis. Qiimeyn iyo daawayn lagu sameeyo cudurrada dhiiggu si aan caadi ahayn u xinjirowga ama u dhiig baxo.'
+  },
+  {
+    icon: <FaUserMd />,
+    title: 'Wound Healing & Tissue Repair | Bogsiinta Nabarrada',
+    description: 'Evaluation of genetic and medical factors affecting wound healing and tissue regeneration. Qiimeyn lagu sameeyo arrimaha hidde-sideyaasha iyo caafimaadka ee saameeya bogsashada nabarrada.'
+  },
+  {
+    icon: <FaFileAlt />,
+    title: 'Genetic & Medical Research | Cilmi-baarista Caafimaadka',
+    description: 'Clinical studies and research on inherited and chronic diseases. Daraasado iyo cilmi-baaris ku saabsan cudurrada hidde-sideyaasha iyo kuwa daba-dheeraada.'
+  },
+  {
+    icon: <FaDna />,
+    title: 'Genetic Testing & Counseling | Baaritaanka Hiddo-sideyaasha',
+    description: 'Advanced genetic screening and professional counseling for patients and families. Baaritaan casri ah iyo talo-bixin xirfadeed oo ku saabsan cudurrada la iska dhaxlo.'
+  },
+  {
+    icon: <FaSeedling />,
+    title: 'Allergy & Immunology Care | Daawaynta Xasaasiyadda',
+    description: 'Diagnosis and treatment of seasonal and chronic allergies. Ogaanshaha iyo daawaynta xasaasiyadda xilliyada kala duwan.'
+  },
+  {
+    icon: <Ear size={28} />,
+    title: 'Physical Rehabilitation & Fitness | Baxnaaninta Jirka',
+    description: 'Physiotherapy and muscle strengthening programs for recovery and wellness. Barnaamijyo baxnaanin iyo xoojinta murqaha si loo soo kabto loona helo caafimaad wanaagsan.'
+  }
+];
+
 
   return (
     <section className={styles.section}>
