@@ -1,0 +1,453 @@
+/* ================================================================
+   EMERGENCY CASE – ENTERPRISE HEALTHCARE COMPONENT
+   Harmonized with global.css design system
+================================================================ */
+
+/* ================================================================
+   CARD CONTAINER
+================================================================ */
+
+.card {
+  position: relative;
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow var(--transition-base),
+              transform var(--transition-base),
+              border-color var(--transition-base);
+  overflow: hidden;
+}
+
+/* PRIORITY-DRIVEN LEFT BORDER */
+.card[data-priority="critical"] {
+  border-left-color: var(--medical-red);
+  background: linear-gradient(to right, rgba(220, 38, 38, 0.02), transparent 100px);
+}
+
+.card[data-priority="high"] {
+  border-left-color: #f59e0b;
+}
+
+.card[data-priority="medium"] {
+  border-left-color: #eab308;
+}
+
+.card[data-priority="low"] {
+  border-left-color: var(--medical-green);
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  border-color: var(--medical-blue);
+}
+
+.card:focus-within {
+  outline: 2px solid var(--medical-blue);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   PRIORITY BADGE (CRITICAL ONLY)
+================================================================ */
+
+.priorityBadge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background: var(--medical-red);
+  color: var(--white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-md);
+  text-transform: uppercase;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.badgeIcon {
+  width: 0.5rem;
+  height: 0.5rem;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ================================================================
+   ICON WRAPPER
+================================================================ */
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: currentColor;
+  position: relative;
+}
+
+.card[data-priority="critical"] .iconWrapper {
+  color: var(--medical-red);
+}
+
+.card[data-priority="high"] .iconWrapper {
+  color: #f59e0b;
+}
+
+.card[data-priority="medium"] .iconWrapper {
+  color: #eab308;
+}
+
+.card[data-priority="low"] .iconWrapper {
+  color: var(--medical-green);
+}
+
+.card[data-type="specialty"] .iconWrapper {
+  color: var(--medical-teal);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+  z-index: 1;
+}
+
+/* Icon glow effect for critical */
+.card[data-priority="critical"] .iconWrapper::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-md);
+  background: var(--medical-red);
+  opacity: 0.2;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+/* ================================================================
+   CONTENT AREA
+================================================================ */
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0; /* Prevents flex overflow */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--medical-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ================================================================
+   METADATA (AVAILABILITY & RESPONSE TIME)
+================================================================ */
+
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-1);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.metaIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--medical-blue);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   CTA BUTTON
+================================================================ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  margin-top: var(--space-2);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  background: var(--medical-blue);
+  border: none;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
+  align-self: flex-start;
+}
+
+/* Priority-specific button colors */
+.card[data-priority="critical"] .button {
+  background: var(--medical-red);
+}
+
+.card[data-priority="critical"] .button:hover {
+  background: #b91c1c;
+}
+
+.button:hover {
+  background: var(--medical-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--medical-blue);
+  outline-offset: 3px;
+}
+
+.buttonText {
+  line-height: 1;
+}
+
+.arrow {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.button:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* ================================================================
+   TYPE-SPECIFIC STYLING
+================================================================ */
+
+.card[data-type="emergency"] {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.02), transparent);
+}
+
+.card[data-type="urgent"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.02), transparent);
+}
+
+.card[data-type="specialty"] {
+  background: linear-gradient(135deg, rgba(0, 166, 166, 0.02), transparent);
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+================================================================ */
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .iconWrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .priorityBadge {
+    top: var(--space-2);
+    right: var(--space-2);
+    font-size: 0.625rem;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .metadata {
+    gap: var(--space-3);
+  }
+
+  .metaItem {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-3);
+  }
+
+  .metadata {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}
+
+/* ================================================================
+   ACCESSIBILITY & MOTION
+================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .button,
+  .arrow,
+  .iconWrapper::after,
+  .priorityBadge,
+  .badgeIcon {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+
+  .button:hover .arrow {
+    transform: none;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--bg-secondary);
+    border-color: var(--border-light);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .card[data-priority="critical"] {
+    background: linear-gradient(to right, rgba(220, 38, 38, 0.08), transparent 100px);
+  }
+
+  .card[data-type="emergency"] {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), transparent);
+  }
+
+  .card[data-type="urgent"] {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);
+  }
+
+  .card[data-type="specialty"] {
+    background: linear-gradient(135deg, rgba(0, 166, 166, 0.05), transparent);
+  }
+
+  .button {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .button:hover {
+    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.4);
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+================================================================ */
+
+@media print {
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 2px solid var(--border-light);
+  }
+
+  .button {
+    display: none;
+  }
+
+  .priorityBadge {
+    animation: none;
+    background: var(--gray-800);
+    color: var(--white);
+  }
+}

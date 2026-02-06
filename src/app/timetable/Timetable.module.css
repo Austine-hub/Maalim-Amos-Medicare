@@ -1,0 +1,335 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #0066cc;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.daySelector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.dayButton {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.875rem 1rem;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dayButton:hover {
+  background: #e9ecef;
+  border-color: #0066cc;
+}
+
+.dayButtonActive {
+  background: #0066cc;
+  border-color: #0066cc;
+  color: #ffffff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+}
+
+.doctorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.doctorCard {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.doctorCard:hover {
+  border-color: #0066cc;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+}
+
+.doctorCardActive {
+  border-color: #0066cc;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+}
+
+.doctorHeader {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.doctorImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f8f9fa;
+}
+
+.doctorImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctorInfo {
+  flex: 1;
+}
+
+.doctorName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.25rem 0;
+}
+
+.doctorSpecialty {
+  font-size: 1rem;
+  color: #0066cc;
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+}
+
+.doctorQualifications {
+  font-size: 0.875rem;
+  color: #868e96;
+  margin: 0;
+}
+
+.scheduleInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f3f5;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.availabilityDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.availabilityActive .availabilityDot {
+  background: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.availabilityInactive .availabilityDot {
+  background: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+}
+
+.availabilityText {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.availabilityActive .availabilityText {
+  color: #28a745;
+}
+
+.availabilityInactive .availabilityText {
+  color: #dc3545;
+}
+
+.timeSlot {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.expandedSchedule {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f3f5;
+}
+
+.weeklyScheduleTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.scheduleGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.scheduleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.scheduleDay {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.9375rem;
+}
+
+.scheduleTimes {
+  font-weight: 500;
+  color: #1a1a1a;
+  font-size: 0.9375rem;
+}
+
+.scheduleTimesUnavailable {
+  color: #868e96;
+}
+
+.appointmentButton {
+  width: 100%;
+  padding: 1rem;
+  background: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.appointmentButton:hover {
+  background: #0052a3;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoCard {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.infoTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.infoText {
+  font-size: 0.9375rem;
+  color: #495057;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  font-size: 0.9375rem;
+  color: #495057;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contactItem strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .daySelector {
+    flex-wrap: nowrap;
+  }
+
+  .dayButton {
+    min-width: 100px;
+    font-size: 0.875rem;
+    padding: 0.75rem 0.75rem;
+  }
+
+  .doctorHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .scheduleInfo {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}

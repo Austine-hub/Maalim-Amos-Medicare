@@ -1,141 +1,134 @@
+/*src/app/page.module.css*/
+
+/* src/app/page.module.css */
+
 .page {
   --background: #fafafa;
-  --foreground: #fff;
+  --foreground: #ffffff;
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-secondary-border: #e5e7eb;
 
-  display: flex;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
   background-color: var(--background);
+  font-family: var(--font-geist-sans);
 }
 
+/* Main layout wrapper */
 .main {
-  display: flex;
-  min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
 }
 
+/* Centered content (text-heavy sections) */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Full-bleed sections (carousel, hero, grids) */
+.fullBleed {
+  width: 100%;
+  max-width: none;
+}
+
+/* Section spacing */
+.section {
+  padding-block: 4rem;
+}
+
+.sectionCompact {
+  padding-block: 2.5rem;
+}
+
+/* Intro / hero text */
 .intro {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+  max-width: 420px;
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
 .intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: var(--text-secondary);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
+/* CTA buttons */
 .ctas {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .ctas a {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  justify-content: center;
+  height: 42px;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 500;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
 }
 
 a.primary {
   background: var(--text-primary);
   color: var(--background);
-  gap: 8px;
 }
 
 a.secondary {
   border-color: var(--button-secondary-border);
+  color: var(--text-primary);
 }
 
-/* Enable hover only on non-touch devices */
+/* Hover only where appropriate */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
-    border-color: transparent;
   }
 
   a.secondary:hover {
     background: var(--button-secondary-hover);
-    border-color: transparent;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .section {
+    padding-block: 2.5rem;
   }
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
   .page {
-    --background: #000;
-    --foreground: #000;
+    --background: #020617;
+    --foreground: #020617;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+    --button-primary-hover: #e5e7eb;
+    --button-secondary-hover: #1e293b;
+    --button-secondary-border: #334155;
   }
 }
